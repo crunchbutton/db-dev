@@ -26,7 +26,7 @@ foreach ($dirs as $dir) {
 		echo $file."...\n";
 		$o = null;
 
-		exec('mysql -u'.getenv('MYSQL_USER').' -p'.getenv('MYSQL_PASSWORD').' '.getenv('MYSQL_DATABASE').' < '.$dir.'/'.$file.' 2>&1 &', $o);
+		exec('mysql -u'.getenv('MYSQL_ROOT_USER').' -p'.getenv('MYSQL_ROOT_PASSWORD').' '.getenv('MYSQL_DATABASE').' < '.$dir.'/'.$file.' 2>&1 &', $o);
 		$ret = implode("\n", $o);
 
 		if (preg_match('/ERROR [0-9]+/', $ret)) {
