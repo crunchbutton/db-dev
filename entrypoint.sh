@@ -11,4 +11,4 @@ for f in /app/db/migrate/*; do
 	fi
 done
 
-"${mysql[@]}" < /setup.sql
+"${mysql[@]}" < /app/db/dummy.sql
